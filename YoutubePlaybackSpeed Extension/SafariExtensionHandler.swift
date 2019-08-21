@@ -1,19 +1,38 @@
 //
 //  SafariExtensionHandler.swift
-//  YoutubePlaybackSpeed Extension
+//  YoutubeSpeedExtension
 //
-//  Created by Mike Napolitano on 8/20/19.
+//  Created by Mike Napolitano on 8/17/19.
 //  Copyright © 2019 mikeynap.dev. All rights reserved.
 //
 
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-    
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+        }
+        
+        // use value from NSDefaults incase view hasn't loaded yet...
+        //NSLog("\(popoverViewController().data())")
+        page.dispatchMessageToScript(withName: "data", userInfo: SafariExtensionViewController.data());
+    }
+    
+    override func popoverDidClose(in window: SFSafariWindow) {
+        let data = SafariExtensionViewController.data();
+        window.getAllTabs { (tabs) in
+            for tab in tabs {
+                tab.getPagesWithCompletionHandler { (pages) in
+                    if pages == nil {
+                        return;
+                    }
+                    for page in pages! {
+                        page.dispatchMessageToScript(withName: "data", userInfo: data);
+                    }
+                }
+            }
         }
     }
     
@@ -27,8 +46,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         validationHandler(true, "")
     }
     
-    override func popoverViewController() -> SFSafariExtensionViewController {
+    override func popoverViewController() -> SafariExtensionViewController {
         return SafariExtensionViewController.shared
     }
-
 }

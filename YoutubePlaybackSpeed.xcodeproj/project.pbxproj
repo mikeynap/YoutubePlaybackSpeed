@@ -18,7 +18,7 @@
 		3458AD0D230CCB1E00190B31 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458AD0C230CCB1E00190B31 /* SafariExtensionViewController.swift */; };
 		3458AD10230CCB1E00190B31 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD0E230CCB1E00190B31 /* SafariExtensionViewController.xib */; };
 		3458AD13230CCB1E00190B31 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD12230CCB1E00190B31 /* script.js */; };
-		3458AD15230CCB1E00190B31 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD14230CCB1E00190B31 /* ToolbarItemIcon.pdf */; };
+		3458AD2B230CD46E00190B31 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD2A230CD46E00190B31 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,8 @@
 		3458AD0F230CCB1E00190B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		3458AD11230CCB1E00190B31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3458AD12230CCB1E00190B31 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		3458AD14230CCB1E00190B31 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		3458AD16230CCB1E00190B31 /* YoutubePlaybackSpeed_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YoutubePlaybackSpeed_Extension.entitlements; sourceTree = "<group>"; };
+		3458AD2A230CD46E00190B31 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +126,12 @@
 		3458AD09230CCB1E00190B31 /* YoutubePlaybackSpeed Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3458AD2A230CD46E00190B31 /* icon.png */,
 				3458AD0A230CCB1E00190B31 /* SafariExtensionHandler.swift */,
 				3458AD0C230CCB1E00190B31 /* SafariExtensionViewController.swift */,
 				3458AD0E230CCB1E00190B31 /* SafariExtensionViewController.xib */,
 				3458AD11230CCB1E00190B31 /* Info.plist */,
 				3458AD12230CCB1E00190B31 /* script.js */,
-				3458AD14230CCB1E00190B31 /* ToolbarItemIcon.pdf */,
 				3458AD16230CCB1E00190B31 /* YoutubePlaybackSpeed_Extension.entitlements */,
 			);
 			path = "YoutubePlaybackSpeed Extension";
@@ -228,7 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3458AD15230CCB1E00190B31 /* ToolbarItemIcon.pdf in Resources */,
+				3458AD2B230CD46E00190B31 /* icon.png in Resources */,
 				3458AD10230CCB1E00190B31 /* SafariExtensionViewController.xib in Resources */,
 				3458AD13230CCB1E00190B31 /* script.js in Resources */,
 			);
