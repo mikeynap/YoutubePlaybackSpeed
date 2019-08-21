@@ -19,7 +19,6 @@ function updateVideoSpeed(){
     if (video.length < 1){
         return;
     }
-    
     video = video[0];
     
     var owner = el.getElementsByTagName("a");
@@ -28,7 +27,7 @@ function updateVideoSpeed(){
     }
     owner = owner[0].innerText.toLowerCase();
     var playback = getPlaybackSpeedFor(owner);
-    if (playback != 1.0){
+    if (playback){
         video.playbackRate = playback;
     }
 }

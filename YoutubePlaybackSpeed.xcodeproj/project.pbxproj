@@ -12,13 +12,13 @@
 		3458ACF8230CCB1E00190B31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3458ACF6230CCB1E00190B31 /* Main.storyboard */; };
 		3458ACFA230CCB1E00190B31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458ACF9230CCB1E00190B31 /* ViewController.swift */; };
 		3458ACFC230CCB1E00190B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3458ACFB230CCB1E00190B31 /* Assets.xcassets */; };
-		3458AD03230CCB1E00190B31 /* YoutubePlaybackSpeed Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3458AD02230CCB1E00190B31 /* YoutubePlaybackSpeed Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3458AD08230CCB1E00190B31 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3458AD07230CCB1E00190B31 /* Cocoa.framework */; };
 		3458AD0B230CCB1E00190B31 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458AD0A230CCB1E00190B31 /* SafariExtensionHandler.swift */; };
 		3458AD0D230CCB1E00190B31 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458AD0C230CCB1E00190B31 /* SafariExtensionViewController.swift */; };
 		3458AD10230CCB1E00190B31 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD0E230CCB1E00190B31 /* SafariExtensionViewController.xib */; };
 		3458AD13230CCB1E00190B31 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD12230CCB1E00190B31 /* script.js */; };
 		3458AD2B230CD46E00190B31 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3458AD2A230CD46E00190B31 /* icon.png */; };
+		34CDA9F3230D928000979702 /* YoutubePlaybackSpeed Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3458AD02230CCB1E00190B31 /* YoutubePlaybackSpeed Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +34,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		3458AD1C230CCB1E00190B31 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3458AD03230CCB1E00190B31 /* YoutubePlaybackSpeed Extension.appex in Embed App Extensions */,
+				34CDA9F3230D928000979702 /* YoutubePlaybackSpeed Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +191,11 @@
 					};
 					3458AD01230CCB1E00190B31 = {
 						CreatedOnToolsVersion = 11.0;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -402,17 +407,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "YoutubePlaybackSpeed Extension/YoutubePlaybackSpeed_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer: Michael Napolitano (G55X3UWH7R)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "YoutubePlaybackSpeed Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.mikeynap.YoutubePlaybackSpeed-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mikeynap.YoutubePlaybackSpeed.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -422,17 +428,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "YoutubePlaybackSpeed Extension/YoutubePlaybackSpeed_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer: Michael Napolitano (G55X3UWH7R)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "YoutubePlaybackSpeed Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.mikeynap.YoutubePlaybackSpeed-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mikeynap.YoutubePlaybackSpeed.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -444,10 +451,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YoutubePlaybackSpeed/YoutubePlaybackSpeed.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer: Michael Napolitano (G55X3UWH7R)";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = YoutubePlaybackSpeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +463,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mikeynap.YoutubePlaybackSpeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -465,10 +474,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YoutubePlaybackSpeed/YoutubePlaybackSpeed.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer: Michael Napolitano (G55X3UWH7R)";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = YoutubePlaybackSpeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mikeynap.YoutubePlaybackSpeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
